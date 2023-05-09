@@ -1,5 +1,4 @@
-# final-project
-Final Project
+# Final Project
 
 ~
 
