@@ -4,9 +4,13 @@
 
 Greetings,
 
-Top 100 Movies built with... Gatsby / GraphQL + multiple APIs + CI/CD + ESLint/Jest Testing + Netlify Serverless Function + Algolia Search
+Top 100 Movies built with... Gatsby + GraphQL + multiple APIs + CI/CD + ESLint/Jest Testing + Netlify Serverless Function + Algolia Search!
 
-The following steps should be hopefully somewhat straightforward to run.
+My URL is the following, thanks!
+
+https://russellfinalproject.netlify.app/
+
+The following steps should be hopefully somewhat straightforward to run for creating a local development environment for this app.
 
 git clone git@github.com:cscie114/csci-e-114-final-project-peaceharmony.git
 
@@ -32,8 +36,5 @@ Add your secrets.NETLIFY_AUTH_TOKEN and secrets.NETLIFY_SITE_ID, both created at
 
 Add your ALGOLIA Keys to GitHub, these are needed in the Build / Indexing that is performed there.
 
-Also, my Netlify URL is...
-
-https://ADD_HERE.netlify.app/
 
 ## Thank You So Much !! :-)
