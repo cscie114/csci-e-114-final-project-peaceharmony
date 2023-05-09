@@ -1,0 +1,130 @@
+/*
+ *  "Adding global styles with a layout component."
+ *  https://www.gatsbyjs.com/docs/how-to/styling/global-css/
+ */
+ 
+body {
+  background-color: #FAF0E6;
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+}
+h1 {
+  color: #8A2BE2;
+}
+.headingparens {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+h2 {
+  color: #fe0000;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+footer {
+  background-color: #e9d3fd;
+  border-top: 2px solid #000000;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+a:link {
+  color: #0000ff;
+  text-decoration: none;
+}
+a:visited {
+  color: #0363fe;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
+.fullname {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.title {
+  font-weight: bold;
+}
+.imgtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.imgsubtitle {
+  font-weight: bold;
+}
+.imgcaption {
+  color: #8b4513;
+}
+.imgcredit {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.infotitle {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.infocontent {
+  color: #8b4513;
+}
+.top {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+.topbottompage {
+  font-size: 1.2rem;
+}
+.addendpoints {
+  font-size: 0.9rem;
+}
+.apititle {
+  color: #006400;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.videotitle {
+  color: #0000ff;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.totalplaces {
+  color: #006400;
+  font-weight: bold;
+}
+.firstfifteen {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.coursetitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.name {
+  color: #8b4513;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.dueat {
+  color: #9400d3;
+  font-weight: bold;
+}
+#map {
+  width: 800px;
+  height: 440px;
+}
+.info {
+  color: #000000;
+  font-size: 0.9rem;
+}
+.comments {
+  color: #191970;
+}
+.commentlabels {
+  color: #000000;
+  font-weight: bold;
+}

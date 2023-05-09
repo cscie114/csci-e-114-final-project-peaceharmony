@@ -1,0 +1,10 @@
+.cache
+.eleventycache
+.env
+.env.production
+.DS_Store
+node_modules
+dist
+public
+# Local "DOT" Netlify (Used in local development work when using the Netlify CLI. By the way, this is different from the normal /netlify/ coding folder.)
+.netlify

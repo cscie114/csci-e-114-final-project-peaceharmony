@@ -1,0 +1,55 @@
+# node.js.yml
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests.
+# GitHub's Building and Testing in Node.js - https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Final_Project
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+    
+  # If we want to, we can manually dispatch this Workflow without needing a Push Code Event:
+  workflow_dispatch:
+
+
+# Algolia Keys...
+# GATSBY_ALGOLIA_APP_ID: algolia.com - Algolia doesn't directly search your data sources. Instead, you upload the parts of your data that are relevant for search to Algolia. Algolia stores this data in an index: a data structure optimized for fast search. Your Application ID is what Algolia uses to identify your app, where all your indices live.
+# GATSBY_ALGOLIA_SEARCH_KEY: algolia.com - Algolia provides a search only API key that allows you to search your data. It works on all the indices of your app and is safe to use in your production frontend code.
+# ALGOLIA_ADMIN_KEY: algolia.com - Keep your admin API key secret. Your account's admin API key gives access to everything in your account, including all your indices.
+env:
+  GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
+  GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
+  ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+  OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo " *** This job was automatically triggered by a ${{ github.event_name }} event. "
+    - run: echo " *** This job is now running on a ${{ runner.os }} server hosted by GitHub!  :-)  "
+    - run: echo " *** The name of the branch is ${{ github.ref }} and the repository is ${{ github.repository }} "
+    - uses: actions/checkout@v3
+    - name: Use node.js version 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run lint
+    - run: npm run test
+    - run: npm run build
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v2.0
+      with:
+        publish-dir: './public'
+        production-branch: main
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Deploy from GitHub Actions"
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      timeout-minutes: 3
+    - run: echo " *** The Workflow is all finished and the job status is ${{ job.status }}. "
